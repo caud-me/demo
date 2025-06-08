@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const isGithub = location.hostname.includes("github.io");
+  const base = document.createElement("base");
+  base.href = isGithub ? "/demo" : "/";
+  document.head.appendChild(base);
+
   const main = document.querySelector('main');
   const status = document.body.dataset.level;
   console.log('[debug] page level:', status)
