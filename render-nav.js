@@ -1,27 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const isGithub = location.hostname.includes("github.io");
-  const base = document.createElement("base");
-  base.href = isGithub ? "/demo" : "/";
-  document.head.appendChild(base);
-
   const main = document.querySelector('main');
   const status = document.body.dataset.level;
   console.log('[debug] page level:', status)
 
   // Load nav CSS
-  const css = `<link rel="stylesheet" href="/ui-nav.css">`;
+  const css = `<link rel="stylesheet" href="/demo/ui-nav.css">`;
   document.head.insertAdjacentHTML('beforeend', css);
 
   // Global navigation
   const primary_navigation = `
     <nav role="navigation" aria-label="primary navigation">
       <div class="parent-wrapper">
-        <a href="/">@strngr.arn</a>
+        <a href="/demo/">@strngr.arn</a>
         <ul>
-          <li><a href="/music/">music</a></li>
-          <li><a href="/projects/">projects</a></li>
-          <li><a href="/work/">work</a></li>
-          <li><a href="/wireframe/">wireframe</a></li>
+          <li><a href="/demo/music/">music</a></li>
+          <li><a href="/demo/projects/">projects</a></li>
+          <li><a href="/demo/work/">work</a></li>
+          <li><a href="/demo/wireframe/">wireframe</a></li>
         </ul>
       </div>
     </nav>
