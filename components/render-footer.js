@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const head = document.querySelector('head');
 
   // Load footer CSS dynamically
-  const css = `<link rel="stylesheet" href="/demo/ui-footer.css">`;
-  head.insertAdjacentHTML('beforeend', css);
+  const cssHref = new URL('../assets/style/ui-footer.css', import.meta.url).href;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = cssHref;
+  document.head.appendChild(link);
 
   const path = window.location.pathname.split('/').filter(Boolean);
 

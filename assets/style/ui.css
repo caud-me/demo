@@ -35,7 +35,7 @@ main > section > .section-wrapper {
   max-width: 1080px;
   margin: 0 auto;
 
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

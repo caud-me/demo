@@ -4,19 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('[debug] page level:', status)
 
   // Load nav CSS
-  const css = `<link rel="stylesheet" href="/demo/ui-nav.css">`;
-  document.head.insertAdjacentHTML('beforeend', css);
+  const cssHref = new URL('../assets/style/ui-nav.css', import.meta.url).href;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = cssHref;
+  document.head.appendChild(link);
 
   // Global navigation
   const primary_navigation = `
     <nav role="navigation" aria-label="primary navigation">
       <div class="parent-wrapper">
-        <a href="/demo/">@strngr.arn</a>
+        <a href="/">@strngr.arn</a>
         <ul>
-          <li><a href="/demo/music/">music</a></li>
-          <li><a href="/demo/projects/">projects</a></li>
-          <li><a href="/demo/work/">work</a></li>
-          <li><a href="/demo/wireframe/">wireframe</a></li>
+          <li><a href="/music/">music</a></li>
+          <li><a href="/projects/">projects</a></li>
+          <li><a href="/work/">work</a></li>
+          <li><a href="/wireframe/">wireframe</a></li>
         </ul>
       </div>
     </nav>
